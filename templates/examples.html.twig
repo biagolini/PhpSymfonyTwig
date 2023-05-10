@@ -1,0 +1,32 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Exemplos Twig{% endblock %}
+
+{% block body %}
+    {# Comentário invisível na inspeção da páginal pela Ferramenta de Desenvolvedor do navegador i.e. F12 #}
+    <!-- Comentário padrão de HTML, visivel na Ferramenta de Desenvolvedor donavegador -->
+    <div class="container">
+        <h1>Exemplos Twig</h1>
+
+        {# Teste lógico #}
+        <h2>Teste lógico</h2>
+        {% set number = 42 %}
+        {% if number > 0 %}
+            <p>{{ number }} é positivo.</p>
+        {% elseif number < 0 %}
+            <p>{{ number }} é negativo.</p>
+        {% else %}
+            <p>{{ number }} é zero.</p>
+        {% endif %}
+
+        {# Manipulação de string #}
+        <h2>Manipulação de string</h2>
+        {% set original_string = "Olá, Mundo!" %}
+        {% set modified_string = original_string|replace({'Olá': 'Oi'}) %}
+        <p>String original: {{ original_string }}</p>
+        <p>String modificada: {{ modified_string }}</p>
+
+        {# Outros exemplos podem ser adicionados aqui #}
+    </div>
+{% endblock %}

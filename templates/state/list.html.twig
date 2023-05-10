@@ -1,0 +1,34 @@
+{# Extend the base layout #}
+{% extends 'base.html.twig' %}
+
+{# Set the page title #}
+{% block title %}List of States{% endblock %}
+
+{# Define the main content of the page #}
+{% block body %}
+    <div class="container">
+        {# Display the title of the page #}
+        <h1 class="mt-4 mb-4">Result</h1>
+
+        {# Create a table to display the states #}
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Abbreviation</th>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            {# Loop through the 'states' array and display each state's data in a table row #}
+            {% for state in states %}
+                <tr>
+                    <td>{{ state.idTypeState }}</td>
+                    <td>{{ state.dsAbbreviation }}</td>
+                    <td>{{ state.dsType }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
